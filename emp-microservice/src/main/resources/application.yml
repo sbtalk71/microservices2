@@ -1,0 +1,28 @@
+server:
+  port: 8181
+spring:
+ datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    password: ${DB_PASSWORD:root}
+    url: ${JDBC_URL:jdbc:mariadb://localhost:3306/sapientdb}
+    username: ${DB_USER:root}
+
+ config:
+  import: optional:configserver:http://localhost:8888/
+ application:
+    name: emp-service
+    
+ jpa:
+    show-sql: true
+    
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${UREKA_SERVER_URL:http://localhost:8761/eureka/}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+       
