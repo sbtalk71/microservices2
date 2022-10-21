@@ -17,14 +17,14 @@ public class HrApplication {
 	}
 
 	@Bean
-	//@LoadBalanced
+	@LoadBalanced
 	public RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
 	
 	
 	@Bean
-	//@LoadBalanced
+	@LoadBalanced
 	public RestTemplate restTemplate2() {
 		return new RestTemplate();
 	}

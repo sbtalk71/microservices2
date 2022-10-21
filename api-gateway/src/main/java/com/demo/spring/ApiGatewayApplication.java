@@ -19,7 +19,7 @@ public class ApiGatewayApplication {
 
 	}
 
-	@Bean
+	//@Bean
 	public RouteLocator appRoutes(RouteLocatorBuilder routeBuilder, MyServerCOnfiguration config) {
 		String empserver = config.getEmpServer();
 		String deptserver = config.getDeptServer();

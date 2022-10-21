@@ -59,13 +59,13 @@ public class HrRestController {
 		HttpEntity<Void> req = new HttpEntity<>(headers);
 
 		// get the dept for dno
-		ResponseEntity<DeptDTO> response1 = restTemplate.exchange("http://localhost:8184/dept/" + deptNo,
+		ResponseEntity<DeptDTO> response1 = restTemplate.exchange("http://dept-service/dept/" + deptNo,
 				HttpMethod.GET, req, DeptDTO.class);
 
 		deptDto = response1.getBody();
 
 		// get all the employees in above dno
-		ResponseEntity<List<EmpDTO>> response2 = restTemplate2.exchange("http://localhost:8181/employee/list/" + deptNo,
+		ResponseEntity<List<EmpDTO>> response2 = restTemplate2.exchange("http://emp-service/employee/list/" + deptNo,
 				HttpMethod.GET, req, new ParameterizedTypeReference<List<EmpDTO>>() {
 				});
 
